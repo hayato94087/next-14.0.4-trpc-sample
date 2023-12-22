@@ -1,5 +1,7 @@
 import "@/styles/globals.css";
 import { FC } from "react";
+import Provider from "./_trpc/provider";
+
 type RootLayoutProps = {
   children: React.ReactNode;
 };
@@ -12,7 +14,9 @@ export const metadata = {
 const RootLayout: FC<RootLayoutProps> = (props) => {
   return (
     <html lang="ja">
-      <body className="">{props.children}</body>
+      <body className="">
+        <Provider>{props.children}</Provider>
+      </body>
     </html>
   );
 };
